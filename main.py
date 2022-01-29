@@ -36,7 +36,11 @@ def split_data(data, test_size):
 
 def train(trainset):
 	"""
-	Item-based cosine KNN: For an item I, with a set of similar items determined based on rating vectors consisting of received user ratings, the rating by a user U, who hasn’t rated it, is found by picking out N items from the similarity list (calculated using cosine angle - if angel between two vectors is less it means that they are similar) that have been rated by U and calculating the rating based on these N ratings.
+	Item-based cosine KNN: For an item I, with a set of similar items determined based on rating vectors consisting of received user ratings, 
+	the rating by a user U, who hasn’t rated it, is found by picking out N items from the similarity list 
+	(calculated using cosine angle - if angel between two vectors is less it means that they are similar) 
+	that have been rated by U and calculating the rating based on these N ratings.
+	
 	Function takes a trainset as input argument and fits the data on KNNWithMeans algo having "cosine" and "item-based" collaborative filtering
 	Returns the fitted model
 	"""
@@ -57,7 +61,8 @@ def test(model, testset):
 
 def save_output(output_file_path, model, data_dict, opt_dict):
 	"""
-	Function takes as input an output file path with the name of the file, fitted model, data_dict and opt_dict (data_dict and opt_dict retrieved from get_data function)
+	Function takes as input an output file path with the name of the file, fitted model, 
+	data_dict and opt_dict (data_dict and opt_dict retrieved from get_data function)
 	Predicts results for users that have not rated a specific item and the rest of the actual results to the output file path 
 	"""
 	output_file = open(output_file_path, 'w')
